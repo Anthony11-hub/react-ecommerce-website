@@ -1,0 +1,15 @@
+.shopProducts {
+  .container {
+    .grid-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+
+      .card {
+        .img-box {
+          height: 300px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.recommended {
+  //   padding: 1rem;
+  padding-block: 3rem;
+
+  .container {
+    .products-recommended {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+  }
+}

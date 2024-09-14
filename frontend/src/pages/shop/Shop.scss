@@ -1,0 +1,73 @@
+.shop {
+  padding: 0 2rem;
+
+  .container {
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .h1 {
+        padding: 2rem 0;
+      }
+
+      .tag-text {
+        padding: 0 1rem;
+        font-size: 1.2rem;
+      }
+
+      .pill {
+        font-size: 1.2rem;
+        cursor: pointer;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+
+    .shop-container {
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 0;
+
+        .filter-icon {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          .section-text {
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: var(--fw-family);
+          }
+        }
+
+        .sort {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .sort-input {
+            font-size: 1.3rem;
+            font-weight: 500;
+            font-family: var(--fw-family);
+          }
+        }
+      }
+
+      .bottom {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 1rem;
+
+        .left {
+          position: sticky;
+          height: 100%;
+          top: 50px;
+        }
+      }
+    }
+  }
+}
