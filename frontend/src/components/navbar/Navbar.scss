@@ -24,16 +24,19 @@
     }
 
     .left {
-      display: flex;
+      display: none;
       align-items: center;
       gap: 2rem;
     }
     .center {
-      font-size: 3rem;
-      letter-spacing: 2px;
+      .img-box {
+        img {
+          width: 120px;
+        }
+      }
     }
     .right {
-      display: flex;
+      display: none;
       align-items: center;
       gap: 2rem;
 
@@ -42,6 +45,33 @@
         gap: 1.5rem;
         color: var(--color-black);
         cursor: pointer;
+      }
+    }
+  }
+
+  @media (min-width: 962px) {
+    .wrapper {
+      .left,
+      .right {
+        display: flex;
+
+        .icons {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .wrapper {
+      .right {
+        .icons {
+          display: flex;
+        }
+      }
+
+      .menu-icon {
+        display: none;
       }
     }
   }

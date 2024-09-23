@@ -1,6 +1,4 @@
 .exploreBlogs {
-  padding: 0 2rem;
-
   .container {
     .top,
     .link-btn {
@@ -43,7 +41,7 @@
 
     .grid-list-col-4 {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
 
       .blog-card {
@@ -81,6 +79,25 @@
           .section-text {
             color: var(--color-white);
             line-height: 1.6;
+            display: none;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      .grid-list-col-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (min-width: 962px) {
+      .grid-list-col-4 {
+        .blog-card {
+          .card-content {
+            .section-text {
+              display: block;
+            }
           }
         }
       }

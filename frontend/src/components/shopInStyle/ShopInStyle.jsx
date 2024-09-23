@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 
+import "./ShopInStyle.scss";
+
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const ShopInStyle = () => {
   return (
-    <div className="shopByCategory section">
+    <div className="shopByCategory shopInStyle section">
       <div className="container">
         <div className="section-header">
           <h1 className="h1">Shop In Style</h1>

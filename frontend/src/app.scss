@@ -25,6 +25,22 @@
 
   --shadow-1: 3px 4px 30px hsla(0, 0%, 53%, 0.1);
   --shadow-2: 5px 3px 40px hsla(191, 100%, 17%, 0.1);
+
+  --fs-1: 4.5rem;
+  --fs-2: 3.6rem;
+  --fs-3: 3.5rem;
+  --fs-4: 3.2rem;
+  --fs-5: 2.5rem;
+  --fs-6: 2.4rem;
+  --fs-7: 2.2rem;
+  --fs-8: 2rem;
+  --fs-9: 1.8rem;
+  --fs-10: 1.5rem;
+  --fs-11: 1.4rem;
+  --fs-12: 1.3rem;
+
+  --fw-600: 600;
+  --fw-500: 500;
 }
 
 *,
@@ -96,7 +112,7 @@ button {
 
 // REUSED STYLES
 .container {
-  padding-inline: 1.5rem;
+  padding-inline: 15px;
 }
 
 .section-text {
@@ -110,6 +126,7 @@ button {
   font-style: italic;
   font-family: var(--fw-family);
   margin: 2rem 0;
+  font-size: var(--fs-9);
 }
 
 .small {
@@ -125,4 +142,57 @@ img {
 
 .section {
   padding-block: 2rem;
+}
+
+@media (min-width: 575px) {
+  .container {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 740px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .h1 {
+    font-size: var(--fs-5);
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* Your CSS rules here */
+  .container {
+    max-width: 1230px;
+  }
+}
+
+@media (min-width: 1366px) {
+  /* Your CSS rules here */
+  .container {
+    max-width: 1300px;
+  }
+}
+
+@media (min-width: 1440px) {
+  /* Your CSS rules here */
+  .container {
+    max-width: 1380px;
+  }
 }

@@ -1,9 +1,7 @@
 .shopByCategory {
-  padding: 0 2rem;
-
   .categories {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
 
     .card {
@@ -37,14 +35,14 @@
           height: 3rem;
           border-radius: 50%;
           background-color: var(--color-white);
-          display: flex;
+          display: none;
           color: var(--color-black);
           align-items: center;
           justify-content: center;
         }
 
         .section-title {
-          font-size: 2.4rem;
+          font-size: 1.8rem;
           font-weight: 800;
           font-style: italic;
           font-family: var(--fw-family);
@@ -55,6 +53,23 @@
     .card:hover {
       .img-box {
         transform: scale(1.1);
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .categories {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .card {
+        .card-content {
+          .icon {
+            display: flex;
+          }
+          .section-title {
+            font-size: 2.4rem;
+          }
+        }
       }
     }
   }

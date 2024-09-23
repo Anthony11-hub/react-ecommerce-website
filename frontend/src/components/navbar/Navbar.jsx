@@ -1,8 +1,8 @@
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SearchIcon from "@mui/icons-material/Search";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
 import ReactCountryFlag from "react-country-flag";
 
 import Badge from "@mui/material/Badge";
@@ -12,10 +12,12 @@ import "./Navbar.scss";
 import { useState } from "react";
 import Cart from "../cart/Cart";
 import Favourite from "../favourite/Favourite";
+import Search from "../search/Search";
 
 const Navbar = () => {
   const [openCart, setOpenCart] = useState(false);
   const [openFavourites, setOpenFavourites] = useState(false);
+  const [openSearch, setOpenSearch] = useState(false);
 
   return (
     <div className="navbar">
@@ -45,16 +47,13 @@ const Navbar = () => {
               Children
             </Link>
           </div>
-          <div className="item">
-            <Link className="link" to={"/products/women"}>
-              Unisex
-            </Link>
-          </div>
         </div>
         {/* center */}
         <div className="center">
           <Link className="link" to={"/"}>
-            STORE
+            <div className="img-box">
+              <img src="/img/logo.png" alt="" />
+            </div>
           </Link>
         </div>
         {/* right */}
@@ -75,8 +74,10 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="icons">
-            <SearchIcon style={{ fontSize: "20px" }} />
-            <PersonOutlineOutlinedIcon style={{ fontSize: "20px" }} />
+            <SearchIcon
+              style={{ fontSize: "20px" }}
+              onClick={() => setOpenSearch(!openSearch)}
+            />
             <Badge
               badgeContent={1}
               color="primary"
@@ -105,9 +106,15 @@ const Navbar = () => {
             </Badge>
           </div>
         </div>
+        <div className="menu-icon">
+          <div className="item">
+            <MenuIcon style={{ fontSize: "20px", cursor: "pointer" }} />
+          </div>
+        </div>
       </div>
       {openCart && <Cart onClose={() => setOpenCart(false)} />}
       {openFavourites && <Favourite onClose={() => setOpenFavourites(false)} />}
+      {openSearch && <Search onClose={() => setOpenSearch(false)} />}
     </div>
   );
 };

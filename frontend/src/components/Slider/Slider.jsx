@@ -1,8 +1,14 @@
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import WestOutlinedIcon from "@mui/icons-material/WestOutlined";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
 import "./Slider.scss";
-// import { Link } from "react-router-dom";
+
+import { Navigation } from "swiper/modules";
 
 const Slider = () => {
   const data = [
@@ -13,23 +19,30 @@ const Slider = () => {
 
   return (
     <div className="slider">
-      <div className="image-container">
-        <img src={data[2]} alt="" />
-      </div>
-      {/* <div className="slider-content">
-        <p className="section-title">Your One Stop Shop</p>
-        <Link className="link" to={"/products/women"}>
-          <p className="section-title">Shop trending designs</p>
-        </Link>
-      </div> */}
-      <div className="icons">
-        <div className="icon">
-          <WestOutlinedIcon />
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation={{
+          nextEl: ".custom-next",
+          prevEl: ".custom-prev",
+        }}
+        loop={true}>
+        {data.map((src, index) => (
+          <SwiperSlide key={index}>
+            <img src={src} alt={`Slide ${index}`} className="slide-image" />
+          </SwiperSlide>
+        ))}
+        {/* Custom Icons for Swiper navigation */}
+        <div className="icons">
+          <div className="icon custom-prev">
+            <WestOutlinedIcon />
+          </div>
+          <div className="icon custom-next">
+            <EastOutlinedIcon />
+          </div>
         </div>
-        <div className="icon">
-          <EastOutlinedIcon />
-        </div>
-      </div>
+      </Swiper>
     </div>
   );
 };

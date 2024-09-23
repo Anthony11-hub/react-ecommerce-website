@@ -1,16 +1,23 @@
 .funThings {
-  padding: 2rem;
-
   .categories {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    // grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "six";
     gap: 1rem;
 
-    .card {
+    .fun-card {
       position: relative;
       overflow: hidden;
       border-radius: 1rem;
-      height: 100%;
+      // min-height: 200px;
+      max-height: 400px;
 
       .img-box {
         transition: var(--transition-2);
@@ -41,32 +48,76 @@
       }
     }
 
-    .card:hover {
+    .fun-card:hover {
       .img-box {
         transform: scale(1.1);
       }
     }
+  }
 
-    .card-1,
-    .card-2 {
-      grid-row-start: 1;
-      grid-row-end: 3;
+  .fun-card:nth-child(1) {
+    grid-area: one;
+  }
+  .fun-card:nth-child(2) {
+    grid-area: two;
+  }
+  .fun-card:nth-child(3) {
+    grid-area: three;
+  }
+  .fun-card:nth-child(4) {
+    grid-area: four;
+  }
+  .fun-card:nth-child(5) {
+    grid-area: five;
+  }
+  .fun-card:nth-child(6) {
+    grid-area: six;
+  }
+
+  @media (min-width: 280px) {
+    .categories {
+      grid-template-areas:
+        "one two"
+        "three four"
+        "five six";
     }
+  }
 
-    .card-5 {
-      grid-column: span 2;
-      height: 200px;
+  @media (min-width: 480px) {
+    .categories {
+      grid-template-areas:
+        "one two"
+        "three five"
+        "four five"
+        "six six";
     }
+  }
 
-    .card-3,
-    .card-4 {
-      height: 200px;
-    }
+  @media (min-width: 962px) {
+    .categories {
+      grid-template-areas:
+        "one two three four"
+        "one two five five"
+        "six six six six";
 
-    .card-6 {
-      grid-column: span 4;
-      grid-row: span 3;
-      height: 200px;
+      // .fun-card {
+      //   min-height: 150px;
+      //   max-height: 400px;
+      // }
+
+      .fun-card:nth-child(3) {
+        max-height: 195px;
+      }
+      .fun-card:nth-child(4) {
+        max-height: 195px;
+      }
+      .fun-card:nth-child(5) {
+        max-height: 195px;
+      }
+
+      .fun-card:nth-child(6) {
+        max-height: 250px;
+      }
     }
   }
 }

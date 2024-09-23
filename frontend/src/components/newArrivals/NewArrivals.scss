@@ -1,6 +1,4 @@
 .newArrivals {
-  padding: 0 2rem;
-
   .top,
   .link-btn {
     display: flex;
@@ -40,9 +38,34 @@
     background-color: var(--color-dark-grey);
   }
 
-  .grid-list {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+  .swiper {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .icons {
+    display: flex;
     gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+    pointer-events: none;
+
+    .icon {
+      width: 50px;
+      height: 35px;
+      background-color: var(--color-dark-grey);
+      color: var(--color-black);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      pointer-events: auto;
+    }
   }
 }

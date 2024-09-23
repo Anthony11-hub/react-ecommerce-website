@@ -1,67 +1,27 @@
 .slider {
-  height: calc(100vh - 50px);
+  height: calc(100vh - 80px);
   width: 100%;
   position: relative;
   overflow: hidden;
 
-  .image-container {
-    width: 100%;
+  .slide-image {
+    width: 100vw;
     height: 100%;
-    display: flex;
-    transition: all 1s ease;
-
-    img {
-      width: 100vw;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .slider-content {
-    width: fit-content;
-    display: flex;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    left: 0;
-    right: 0;
-    bottom: 180px;
-    gap: 10px;
-    margin: auto;
-
-    .section-title {
-      font-family: var(--fw-family);
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--color-white);
-    }
-
-    .link {
-      background-color: white;
-      border-radius: 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      padding: 0.5rem 2rem;
-
-      .section-title {
-        color: var(--color-black);
-      }
-    }
+    object-fit: cover;
   }
 
   .icons {
-    width: fit-content;
     display: flex;
+    gap: 1rem;
+    justify-content: center;
     position: absolute;
+    top: 50%;
     left: 0;
     right: 0;
-    bottom: 100px;
-    gap: 10px;
-    margin: auto;
+    width: 100%;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 222;
 
     .icon {
       width: 50px;
@@ -72,6 +32,34 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      pointer-events: auto; /* Ensures the buttons can be clicked */
+    }
+  }
+
+  // Responsive Adjustments
+  @media (max-width: 1024px) {
+    height: 50vh; // Adjust slider height for medium-sized screens
+    .icons {
+      top: 30%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 70vh; // Further reduce height for smaller tablets
+    .slide-image {
+      height: 100vh; // Reduce image height for mobile
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 100vh; // Adjust for mobile screens
+
+    .slide-image {
+      height: 100vh; // Reduce image height for mobile
+    }
+
+    .icons {
+      top: 70%;
     }
   }
 }
